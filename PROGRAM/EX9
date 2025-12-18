@@ -1,0 +1,78 @@
+import java.util.Scanner;
+
+// Interface
+interface Shape {
+    double getArea();
+}
+
+// Rectangle class
+class Rectangle implements Shape {
+    double length;
+    double breadth;
+
+    Rectangle(double l, double b) {
+        length = l;
+        breadth = b;
+    }
+
+    public double getArea() {
+        return length * breadth;
+    }
+}
+
+// Circle class
+class Circle implements Shape {
+    double radius;
+
+    Circle(double r) {
+        radius = r;
+    }
+
+    public double getArea() {
+        return (22.0 / 7.0) * radius * radius;
+    }
+}
+
+// Triangle class
+class Triangle implements Shape {
+    double base;
+    double height;
+
+    Triangle(double b, double h) {
+        base = b;
+        height = h;
+    }
+
+    public double getArea() {
+        return 0.5 * base * height;
+    }
+}
+
+// Main class
+public class EX9 {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+
+        // Rectangle
+        System.out.println("Enter length and breadth of rectangle:");
+        double le = scan.nextDouble();
+        double br = scan.nextDouble();
+        Shape rectangle = new Rectangle(le, br);
+        System.out.println("Area of Rectangle: " + rectangle.getArea());
+
+        // Circle
+        System.out.println("Enter radius of circle:");
+        double rad = scan.nextDouble();
+        Shape circle = new Circle(rad);
+        System.out.println("Area of Circle: " + circle.getArea());
+
+        // Triangle
+        System.out.println("Enter base and height of triangle:");
+        double ba = scan.nextDouble();
+        double ht = scan.nextDouble();
+        Shape triangle = new Triangle(ba, ht);
+        System.out.println("Area of Triangle: " + triangle.getArea());
+
+        scan.close();
+    }
+}
