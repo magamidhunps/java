@@ -1,78 +1,78 @@
-import java.util.Scanner;
 
-// Interface
-interface Shape {
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package program;
+
+/**
+ *
+ * @author Student
+ */
+import java.util.Scanner;
+interface shape
+{
     double getArea();
 }
-
-// Rectangle class
-class Rectangle implements Shape {
+class rectangle implements shape
+{
     double length;
-    double breadth;
-
-    Rectangle(double l, double b) {
-        length = l;
-        breadth = b;
+    double breath;
+    rectangle(double l,double b)
+    {
+        length=l;
+        breath=b;
     }
-
-    public double getArea() {
-        return length * breadth;
+    public double getArea()
+    {
+        return length*breath;
     }
 }
-
-// Circle class
-class Circle implements Shape {
+class circle implements shape
+{
     double radius;
-
-    Circle(double r) {
-        radius = r;
+    circle(double r)
+    {
+        radius=r;
     }
-
-    public double getArea() {
-        return (22.0 / 7.0) * radius * radius;
+    public double getArea()
+    {
+        return 22.0/7.0*radius*radius;
     }
 }
-
-// Triangle class
-class Triangle implements Shape {
+class Triangle implements shape
+{
     double base;
     double height;
-
-    Triangle(double b, double h) {
-        base = b;
-        height = h;
+    Triangle(double b, double h)
+    {
+        base=b;
+        height=h;
     }
-
-    public double getArea() {
-        return 0.5 * base * height;
+    public double getArea()
+    {
+        return 0.5*base*height;
     }
 }
-
-// Main class
-public class EX9 {
-    public static void main(String[] args) {
-        Scanner scan = new Scanner(System.in);
-
-        // Rectangle
-        System.out.println("Enter length and breadth of rectangle:");
-        double le = scan.nextDouble();
-        double br = scan.nextDouble();
-        Shape rectangle = new Rectangle(le, br);
-        System.out.println("Area of Rectangle: " + rectangle.getArea());
-
-        // Circle
-        System.out.println("Enter radius of circle:");
-        double rad = scan.nextDouble();
-        Shape circle = new Circle(rad);
-        System.out.println("Area of Circle: " + circle.getArea());
-
-        // Triangle
-        System.out.println("Enter base and height of triangle:");
-        double ba = scan.nextDouble();
-        double ht = scan.nextDouble();
-        Shape triangle = new Triangle(ba, ht);
-        System.out.println("Area of Triangle: " + triangle.getArea());
-
-        scan.close();
+class ex9
+{
+    public static void main(String args[])
+    {
+        Scanner scan=new Scanner(System.in);
+        System.out.println("Enter Length and breadth of Rectangle : ");
+        double le=scan.nextInt();
+        double br=scan.nextInt();
+        shape rectangle=new rectangle(le,br);
+         System.out.println("Enter Radius of Circle:");
+        double rad=scan.nextInt();
+        shape circle= new circle(rad);
+        System.out.println("Enter Base and Height of Triangle :");
+        double ba=scan.nextInt();
+        double ht=scan.nextInt();
+        shape triangle=new Triangle(ba,ht);
+        System.out.println("Area of the rectangle:"+ rectangle.getArea());
+        System.out.println("Area of the circle:"+circle.getArea());
+        System.out.println("Area of the triangle :"+triangle.getArea());
+        
     }
 }
