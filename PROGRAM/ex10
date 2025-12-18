@@ -1,0 +1,57 @@
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package program;
+
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+
+public class ex10
+{
+    public static void main(String args[])
+    {
+     JFrame frame=new JFrame("Color Changer");
+     frame.setSize(400,300);
+     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+     final JPanel panel=new JPanel();
+     
+     final JButton redButton = new JButton("Red");
+      final JButton blueButton = new JButton("Blue");
+       final JButton yellowButton = new JButton("Yellow");
+       
+       panel.add(redButton);
+        panel.add(blueButton); 
+        panel.add(yellowButton);
+        
+        ActionListener colorChanger=new ActionListener()
+        {
+            public void actionPerformed(ActionEvent e)
+            {
+            if(e.getSource()== redButton)
+            {
+              panel.setBackground(Color.RED);
+            }
+            else if (e.getSource() == blueButton)
+            {
+               panel.setBackground(Color.BLUE);
+            }
+            else if (e.getSource() == yellowButton)
+            {
+                panel.setBackground(Color.YELLOW); 
+            }
+            }
+        };
+        
+       redButton.addActionListener(colorChanger);
+       blueButton.addActionListener(colorChanger);
+       yellowButton.addActionListener(colorChanger);
+               
+       frame.add(panel);
+       
+       frame.setVisible(true);
+    }
+}
